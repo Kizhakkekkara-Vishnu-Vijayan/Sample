@@ -1,22 +1,22 @@
 # Database configuration (MySQL) 
 _**Note: The (#) represents the root directory of the Linux machine and ($) represents all other directories.**_
 
-## Login to the db vm
+### Login to the db vm
 >  **$ vagrant ssh db01**
-## Verify Hosts entry, if entries missing update the it with IP and hostnames
+### Verify Hosts entry, if entries missing update the it with IP and hostnames
 > **# cat /etc/hosts**
-## Update OS with latest patches
+### Update OS with latest patches
 > **# yum update -y**
-## Set Repository
+### Set Repository
 > **# yum install epel-release -y**
-## Install Maria DB Package
+### Install Maria DB Package
 > **# yum install git mariadb-server -y**
-## Starting & enabling mariadb-server
+### Starting & enabling mariadb-server
 > **# systemctl start mariadb**
 > **# systemctl enable mariadb**
-## RUN mysql secure installation script.
+### RUN mysql secure installation script.
 > **# mysql_secure_installation**
-## NOTE: Set db root password, I will be using _admin123_ as password
+### [NOTE: Set db root password, I will be using _admin123_ as password]
 ```
 Set root password? [Y/n] Y
 New password:
@@ -48,7 +48,7 @@ will take effect immediately.
 Reload privilege tables now? [Y/n] Y
 ... Success!
 ```
-## Set DB name and users.
+### Set DB name and users.
 > **# mysql -u root -padmin123**
 ```
 mysql> create database accounts;
@@ -56,7 +56,7 @@ mysql> grant all privileges on accounts.* TO 'admin'@'%' identified by 'admin123
 mysql> FLUSH PRIVILEGES;
 mysql> exit;
 ```
-## Download Source code & Initialize Database.
+### Download Source code & Initialize Database.
 ```
 git clone -b main https://github.com/hkhcoder/vprofile-project.git
 cd vprofile-project
@@ -76,5 +76,5 @@ mysql -u root -padmin123 accounts
 mysql> exit;
 
 
-## Restart mariadb-server
+### Restart mariadb-server
 > **# systemctl restart mariadb**
