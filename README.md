@@ -28,4 +28,9 @@ Ensure that you have the following installed on your machine:
 4. Deploy the Application: Once the environment is set up, deploy the web application and ensure all services are running correctly.
 
 ### Further Steps 
+
 After setting up the project, you can explore various aspects such as load balancing with NGINX, database caching with Memcached, and message queuing with RabbitMQ. The application should be accessible either directly via the backend server (Tomcat) or through the frontend web server (NGINX).
+
+## Project flow diagram
+
+![3-tier Architecture diagram](https://github.com/Kizhakkekkara-Vishnu-Vijayan/Sample/blob/master/images/flow_diagram.png)
