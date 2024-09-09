@@ -63,11 +63,18 @@ cd vprofile-project
 mysql -u root -padmin123 accounts < src/main/resources/db_backup.sql
 mysql -u root -padmin123 accounts
 ```
-```
-mysql> show tables;
+
+> mysql> show databases;
+
 ![DB_image](https://github.com/Kizhakkekkara-Vishnu-Vijayan/Sample/blob/master/images/DB-image.png)
+
+> mysql> show tables;
+
+![DB_image](https://github.com/Kizhakkekkara-Vishnu-Vijayan/Sample/blob/master/images/Tables.png)
+
+
 mysql> exit;
-```
+
 
 ## Restart mariadb-server
 > **# systemctl restart mariadb**
