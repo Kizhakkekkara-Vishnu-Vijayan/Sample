@@ -1,6 +1,6 @@
-# Database configuration (MySQL) 
+# Database configuration (MySQL, MEMCACHE) 
 _**Note: The (#) represents the root directory of the Linux machine and ($) represents all other directories.**_
-
+## 1. MySQL Configuration
 ### Login to the db vm
 >  **$ vagrant ssh db01**
 ### Verify Hosts entry, if entries missing update the it with IP and hostnames
@@ -78,3 +78,29 @@ mysql> exit;
 
 ### Restart mariadb-server
 > **# systemctl restart mariadb**
+
+## 2. MEMCACHE Configuration
+
+### Login to the Memcache vm
+> **$ vagrant ssh mc01**
+### Verify Hosts entry, if entries missing update the it with IP and hostnames
+> **# cat /etc/hosts**
+### Update OS with latest patches
+> **# yum update -y**
+### Install, start & enable memcache on port 11211
+```
+# sudo dnf install epel-release -y
+# sudo dnf install memcached -y
+# sudo systemctl start memcached
+# sudo systemctl enable memcached
+# sudo systemctl status memcached
+# sed -i 's/127.0.0.1/0.0.0.0/g' /etc/sysconfig/memcached
+# sudo systemctl restart memcached
+```
+
+### The sed command is used to search and replace the file content:
+#### Before sed command the directory content of /etc/sysconfig/memcached.
+![Before-sed](https://github.com/Kizhakkekkara-Vishnu-Vijayan/Sample/blob/master/images/Before-sed.png)
+#### Before sed command the directory content of /etc/sysconfig/memcached.
+![After-sed](https://github.com/Kizhakkekkara-Vishnu-Vijayan/Sample/blob/master/images/After-sed.png)
+#### Replacing the local machine (loop back IP address - 127.0.0.1), with 0.0.0.0, so that remote connection to Memcached service can be established.
