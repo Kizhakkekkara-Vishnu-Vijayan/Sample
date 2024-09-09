@@ -33,4 +33,4 @@ After setting up the project, you can explore various aspects such as load balan
 
 ## Project flow diagram
 
-![3-tier Architecture diagram](https://github.com/Kizhakkekkara-Vishnu-Vijayan/Sample/blob/master/images/flow_diagram.png"3-Tier-Architectural-Diagram")
+![3-tier Architecture diagram](https://github.com/Kizhakkekkara-Vishnu-Vijayan/Sample/blob/master/images/flow_diagram.png)
