@@ -80,15 +80,15 @@ WantedBy=multi-user.target
 > **# systemctl enable tomcat**
 ## CODE BUILD & DEPLOY (app01)
 ### Download Source code
-> **# git clone -b main https://github.com/hkhcoder/vprofile-project.git**
+> **# git clone https://github.com/Kizhakkekkara-Vishnu-Vijayan/Clone-directory.git**
 ### Update configuration
 ```
-# cd vprofile-project
+# cd Clone-directory
 # vim src/main/resources/application.properties
 # Update file with backend server details
 ```
 ## Build code
-### Run below command inside the repository (vprofile-project)
+### Run below command inside the repository (Clone-directory)
 > **# mvn install**
 ## Deploy artifact
 ```
